@@ -1,8 +1,21 @@
+spring:
+  profiles: dev
 server:
   port: 80
 
+---
+
+spring:
+  profiles: product
+server:
+  port: 90
+  
+---  
+
 zuul:
-  ignored-services: dept  routes:    myrote.serviceId: dept
+  ignored-services: dept
+  routes:
+    myrote.serviceId: dept
     myrote.path: /mydept/**
   
 eureka:
